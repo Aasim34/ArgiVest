@@ -6,7 +6,7 @@ import {
   type SimulateFundDistributionOutput,
 } from '@/ai/flows/simulate-fund-distribution';
 import { z } from 'zod';
-import { mockData } from './lib/mock-data';
+import { mockData } from '@/lib/mock-data';
 
 const SimulationSchema = z.object({
   projectId: z.string().min(1, 'Project ID is required.'),
