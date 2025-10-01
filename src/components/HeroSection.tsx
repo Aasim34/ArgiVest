@@ -1,3 +1,4 @@
+'use client';
 import { Button } from './ui/button';
 import { TrendingUp, Users, Shield, Sprout } from 'lucide-react';
 import Image from 'next/image';

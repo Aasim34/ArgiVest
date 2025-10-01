@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { Navbar } from '../components/Navbar';
 import { HeroSection } from '../components/HeroSection';
@@ -245,7 +246,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Navbar
         currentView={currentView}
         setCurrentView={setCurrentView}
