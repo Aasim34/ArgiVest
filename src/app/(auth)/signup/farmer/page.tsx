@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 function GoogleIcon() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-4 w-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-4 w-4">
             <circle cx="12" cy="12" r="10" />
             <circle cx="12" cy="12" r="4" />
             <line x1="21.17" y1="8" x2="12" y2="8" />
@@ -37,6 +37,26 @@ export default function FarmerSignupPage() {
         <div className="grid gap-2">
           <Label htmlFor="password">Password</Label>
           <Input id="password" type="password" />
+        </div>
+        <div className="grid gap-2">
+          <Label htmlFor="aadhar-number">Aadhar Number</Label>
+          <Input id="aadhar-number" placeholder="XXXX XXXX XXXX" required />
+        </div>
+        <div className="grid gap-2">
+          <Label htmlFor="pan-number">PAN Number</Label>
+          <Input id="pan-number" placeholder="ABCDE1234F" required />
+        </div>
+        <div className="grid gap-2">
+            <Label htmlFor="land-area">Land Area (in acres)</Label>
+            <Input id="land-area" type="number" placeholder="e.g., 5" required />
+        </div>
+        <div className="grid gap-2">
+            <Label htmlFor="address-proof">Address Proof</Label>
+            <Input id="address-proof" type="file" required />
+        </div>
+        <div className="grid gap-2">
+            <Label htmlFor="land-certificate">Land Certificate</Label>
+            <Input id="land-certificate" type="file" required />
         </div>
         <Button type="submit" className="w-full">
           Create Farmer Account
