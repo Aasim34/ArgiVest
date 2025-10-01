@@ -1,3 +1,88 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "A beautiful lush green field with a farmer tending to the crops under a sunny sky.",
+      "imageUrl": "https://images.unsplash.com/photo-1694487652603-18ee5406a88f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsdXNoJTIwZmFybXxlbnwwfHx8fDE3NTkyNDc5MDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lush farm"
+    },
+    {
+      "id": "feature-1",
+      "description": "A close-up of hands holding a small seedling with soil.",
+      "imageUrl": "https://images.unsplash.com/photo-1607775033878-70b5d7963dcf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2VlZGxpbmclMjBoYW5kc3xlbnwwfHx8fDE3NTkzMTY5ODB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "seedling hands"
+    },
+    {
+      "id": "feature-2",
+      "description": "A group of diverse people smiling and working together in a community garden.",
+      "imageUrl": "https://images.unsplash.com/photo-1527525443983-6e60c75fff46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29tbXVuaXR5JTIwZ2FyZGVufGVufDB8fHx8MTc1OTI1MjAzNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "community garden"
+    },
+    {
+      "id": "feature-3",
+      "description": "A basket full of fresh, colorful vegetables.",
+      "imageUrl": "https://images.unsplash.com/photo-1592924802543-809bfeee53fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmcmVzaCUyMHZlZ2V0YWJsZXN8ZW58MHx8fHwxNzU5MjkyMjg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fresh vegetables"
+    },
+    {
+      "id": "project-tomato",
+      "description": "Vibrant red tomatoes growing on the vine in a greenhouse.",
+      "imageUrl": "https://images.unsplash.com/photo-1677816156326-0e1fcfa8dc54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0b21hdG9lcyUyMHZpbmV8ZW58MHx8fHwxNzU5MjgxNDE3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tomatoes vine"
+    },
+    {
+      "id": "project-lettuce",
+      "description": "Crisp green lettuce heads in neat rows in a field.",
+      "imageUrl": "https://images.unsplash.com/photo-1713082063917-59863809f007?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsZXR0dWNlJTIwZmllbGR8ZW58MHx8fHwxNzU5MzE2OTgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lettuce field"
+    },
+    {
+      "id": "project-corn",
+      "description": "Tall stalks of corn in a field against a blue sky.",
+      "imageUrl": "https://images.unsplash.com/photo-1504788576473-fa4b594356a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb3JuJTIwZmllbGR8ZW58MHx8fHwxNzU5MjM2ODY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "corn field"
+    },
+    {
+      "id": "project-wheat",
+      "description": "Golden wheat field swaying in the breeze.",
+      "imageUrl": "https://images.unsplash.com/photo-1594842059196-5b6b8fa73187?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3aGVhdCUyMGZpZWxkfGVufDB8fHx8MTc1OTIyOTE5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wheat field"
+    },
+    {
+      "id": "avatar-farmer-1",
+      "description": "Avatar for farmer John Doe.",
+      "imageUrl": "https://images.unsplash.com/photo-1665281874778-b606707b8cb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmFybWVyJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzU5MjA2MjkwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "farmer portrait"
+    },
+    {
+      "id": "avatar-farmer-2",
+      "description": "Avatar for farmer Jane Smith.",
+      "imageUrl": "https://images.unsplash.com/photo-1655979990741-c5cf5db49f0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYXJtZXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTkyMDYyOTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "farmer portrait"
+    },
+    {
+      "id": "avatar-consumer-1",
+      "description": "Avatar for consumer Alice Johnson.",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwc21pbGluZ3xlbnwwfHx8fDE3NTkyMzU4MDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "avatar-consumer-2",
+      "description": "Avatar for consumer Bob Williams.",
+      "imageUrl": "https://images.unsplash.com/photo-1656338997878-279d71d48f6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8MTc1OTIzNTgwOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "avatar-admin",
+      "description": "Avatar for admin.",
+      "imageUrl": "https://images.unsplash.com/photo-1570170609489-43197f518df0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHJvZmVzc2lvbmFsJTIwcGVyc29ufGVufDB8fHx8MTc1OTI1MzI5OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional person"
+    },
+    {
+      "id": "auth-background",
+      "description": "A serene image of a barn in a field during sunrise.",
+      "imageUrl": "https://images.unsplash.com/photo-1548227756-28a7c236717a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmYXJtJTIwc3VucmlzZXxlbnwwfHx8fDE3NTkyMzYwMTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "farm sunrise"
+    }
+  ]
 }
