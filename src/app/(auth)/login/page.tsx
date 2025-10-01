@@ -1,6 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Separator } from '@/components/ui/separator';
+import { Leaf, Tractor } from 'lucide-react';
 import Link from 'next/link';
 
 function GoogleIcon() {
@@ -40,11 +42,23 @@ export default function LoginPage() {
           Login with Google
         </Button>
       </div>
-      <div className="mt-4 text-center text-sm">
-        Don&apos;t have an account?{' '}
-        <Link href="/signup" className="underline">
-          Sign up
-        </Link>
+      <Separator className="my-4" />
+        <div className="grid gap-4">
+            <div className="text-center text-sm text-muted-foreground">
+                Don&apos;t have an account? Sign up as...
+            </div>
+            <Button variant="outline" asChild>
+                <Link href="/signup/investor">
+                    <Leaf className="mr-2 h-4 w-4" />
+                    Investor
+                </Link>
+            </Button>
+            <Button variant="outline" asChild>
+                <Link href="/signup/farmer">
+                    <Tractor className="mr-2 h-4 w-4" />
+                    Farmer
+                </Link>
+            </Button>
       </div>
     </>
   );
