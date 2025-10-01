@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   :root {
     --background: 60 56% 91%;
@@ -33,15 +29,8 @@ body {
     --chart-4: 10 70% 50%;
     --chart-5: 190 70% 40%;
     --radius: 0.5rem;
-    --sidebar-background: 60 40% 94%;
-    --sidebar-foreground: 40 10% 15%;
-    --sidebar-primary: 120 60% 37%;
-    --sidebar-primary-foreground: 120 25% 95%;
-    --sidebar-accent: 34 44% 75%;
-    --sidebar-accent-foreground: 34 20% 15%;
-    --sidebar-border: 60 15% 85%;
-    --sidebar-ring: 120 60% 37%;
   }
+ 
   .dark {
     --background: 40 10% 10%;
     --foreground: 60 5% 95%;
@@ -67,17 +56,9 @@ body {
     --chart-3: 20 80% 60%;
     --chart-4: 10 70% 60%;
     --chart-5: 190 70% 50%;
-    --sidebar-background: 40 8% 12%;
-    --sidebar-foreground: 60 5% 95%;
-    --sidebar-primary: 120 60% 67%;
-    --sidebar-primary-foreground: 120 50% 10%;
-    --sidebar-accent: 34 44% 30%;
-    --sidebar-accent-foreground: 34 5% 95%;
-    --sidebar-border: 40 5% 25%;
-    --sidebar-ring: 120 60% 67%;
   }
 }
-
+ 
 @layer base {
   * {
     @apply border-border;
@@ -86,3 +67,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.bg-grid-pattern {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(228 228 231 / 0.5)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
