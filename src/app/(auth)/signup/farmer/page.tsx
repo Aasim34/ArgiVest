@@ -1,9 +1,21 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function FarmerSignupPage() {
+  const router = useRouter();
+
+  const handleSignup = (e: React.FormEvent) => {
+    e.preventDefault();
+    // In a real app, you would have registration logic here.
+    // For now, we'll just redirect to the farmer dashboard.
+    router.push('/dashboard/farmer');
+  };
+  
   return (
     <>
       <div className="grid gap-2 text-center">
@@ -12,7 +24,7 @@ export default function FarmerSignupPage() {
           Create an account to get funding for your projects.
         </p>
       </div>
-      <div className="grid gap-4">
+      <form onSubmit={handleSignup} className="grid gap-4">
         <div className="grid gap-2">
           <Label htmlFor="full-name">Full Name</Label>
           <Input id="full-name" placeholder="Max Robinson" required />
@@ -23,7 +35,7 @@ export default function FarmerSignupPage() {
         </div>
         <div className="grid gap-2">
           <Label htmlFor="password">Password</Label>
-          <Input id="password" type="password" />
+          <Input id="password" type="password" required/>
         </div>
         <div className="grid gap-2">
           <Label htmlFor="aadhar-number">Aadhar Number</Label>
@@ -48,7 +60,7 @@ export default function FarmerSignupPage() {
         <Button type="submit" className="w-full">
           Create Farmer Account
         </Button>
-      </div>
+      </form>
       <div className="mt-4 text-center text-sm">
         Already have an account?{' '}
         <Link href="/login" className="underline">
