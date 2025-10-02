@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
@@ -17,9 +18,11 @@ import {
   Sprout,
   PieChart,
   Plus,
-  Edit
+  Edit,
+  Star
 } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 interface FarmerDashboardProps {
   farmerData: {
@@ -69,6 +72,25 @@ export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
     { name: 'Priya Patel', amount: 20000, avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b67c?w=150' },
     { name: 'Amit Kumar', amount: 15000, avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150' },
     { name: 'Sunita Devi', amount: 10000, avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150' }
+  ];
+
+  const feedback = [
+    {
+      id: '1',
+      name: 'Priya Sharma',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150',
+      rating: 5,
+      date: '2 weeks ago',
+      comment: 'Rajesh is an incredibly dedicated farmer. The project updates were timely, and the final produce was of excellent quality. Highly recommended!'
+    },
+    {
+      id: '2',
+      name: 'Amit Singh',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150',
+      rating: 4,
+      date: '1 month ago',
+      comment: 'A very transparent and well-managed project. The ROI was as expected. I would have liked more frequent photo updates, but overall a great experience.'
+    }
   ];
 
   return (
@@ -353,6 +375,42 @@ export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
                   <div className="text-gray-500">Due in 6 weeks</div>
                 </div>
               </div>
+            </div>
+          </Card>
+
+          {/* Investor Feedback */}
+          <Card className="p-6">
+            <h3 className="font-semibold text-gray-900 mb-6">Investor Feedback</h3>
+            <div className="space-y-6">
+              {feedback.map((fb) => (
+                <div key={fb.id} className="flex gap-4">
+                  <Avatar>
+                    <AvatarImage src={fb.avatar} alt={fb.name} />
+                    <AvatarFallback>{fb.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="font-medium">{fb.name}</div>
+                        <div className="text-xs text-gray-500">{fb.date}</div>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`w-4 h-4 ${
+                              i < fb.rating
+                                ? 'text-amber-500 fill-amber-500'
+                                : 'text-gray-300'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-gray-600 mt-2">{fb.comment}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </Card>
         </div>
