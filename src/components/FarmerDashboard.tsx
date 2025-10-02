@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { toast } from 'sonner';
 
 interface FarmerDashboardProps {
   farmerData: {
@@ -44,9 +45,30 @@ export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [newUpdate, setNewUpdate] = useState('');
   const [feedbackRating, setFeedbackRating] = useState(0);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   
   const fundingProgress = (farmerData.currentFunding / farmerData.totalFunding) * 100;
   const remainingAmount = farmerData.totalFunding - farmerData.currentFunding;
+
+  const handleUploadPhotosClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      const fileCount = event.target.files.length;
+      toast.success(`${fileCount} photo(s) selected for upload.`);
+      // Here you would typically handle the file upload process
+    }
+  };
+
+  const handleViewAnalytics = () => {
+    toast.info("Analytics dashboard is coming soon!");
+  };
+
+  const handleScheduleUpdate = () => {
+    toast.info("Update scheduling feature is in development.");
+  };
 
   const recentUpdates = [
     {
@@ -335,15 +357,22 @@ export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
           <Card className="p-6">
             <h3 className="font-semibold text-gray-900 mb-4">Quick Actions</h3>
             <div className="space-y-3">
-              <Button variant="outline" className="w-full justify-start gap-3">
+              <input
+                type="file"
+                ref={fileInputRef}
+                className="hidden"
+                onChange={handleFileChange}
+                multiple
+              />
+              <Button variant="outline" className="w-full justify-start gap-3" onClick={handleUploadPhotosClick}>
                 <Camera className="w-4 h-4" />
                 Upload Crop Photos
               </Button>
-              <Button variant="outline" className="w-full justify-start gap-3">
+              <Button variant="outline" className="w-full justify-start gap-3" onClick={handleViewAnalytics}>
                 <PieChart className="w-4 h-4" />
                 View Analytics
               </Button>
-              <Button variant="outline" className="w-full justify-start gap-3">
+              <Button variant="outline" className="w-full justify-start gap-3" onClick={handleScheduleUpdate}>
                 <Calendar className="w-4 h-4" />
                 Schedule Update
               </Button>
