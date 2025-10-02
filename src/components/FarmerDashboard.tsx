@@ -150,9 +150,27 @@ export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
               <Label htmlFor="farmSize">Farm Size</Label>
               <Input id="farmSize" defaultValue={farmerData.farmSize} />
             </div>
+             <div>
+              <Label htmlFor="aadhar-number">Aadhar Number</Label>
+              <Input id="aadhar-number" placeholder="XXXX XXXX XXXX" />
+            </div>
+            <div>
+              <Label htmlFor="pan-number">PAN Number</Label>
+              <Input id="pan-number" placeholder="ABCDE1234F" />
+            </div>
             <div className="md:col-span-2">
               <Label htmlFor="avatar">Profile Picture URL</Label>
               <Input id="avatar" defaultValue={farmerData.avatar} />
+            </div>
+             <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <Label htmlFor="address-proof">Address Proof</Label>
+                <Input id="address-proof" type="file" />
+              </div>
+              <div>
+                <Label htmlFor="land-certificate">Land Certificate</Label>
+                <Input id="land-certificate" type="file" />
+              </div>
             </div>
           </div>
           <div className="mt-6 flex justify-end gap-3">
