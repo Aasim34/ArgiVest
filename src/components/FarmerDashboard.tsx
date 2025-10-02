@@ -18,9 +18,12 @@ import {
   Sprout,
   PieChart,
   Plus,
-  Edit
+  Edit,
+  Star,
+  MessageSquare
 } from 'lucide-react';
 import Image from 'next/image';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 interface FarmerDashboardProps {
   farmerData: {
@@ -72,13 +75,32 @@ export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
     { name: 'Sunita Devi', amount: 10000, avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150' }
   ];
 
+  const feedback = [
+    {
+      id: '1',
+      name: 'Priya Sharma',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150',
+      rating: 5,
+      date: '2 weeks ago',
+      comment: 'Rajesh is an incredibly dedicated farmer. The project updates were timely, and the final produce was of excellent quality. Highly recommended!'
+    },
+    {
+      id: '2',
+      name: 'Amit Singh',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150',
+      rating: 4,
+      date: '1 month ago',
+      comment: 'A very transparent and well-managed project. The ROI was as expected. I would have liked more frequent photo updates, but overall a great experience.'
+    }
+  ];
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-gray-100">
+            <div className="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 relative">
               <Image
                 src={farmerData.avatar}
                 alt={farmerData.name}
@@ -276,13 +298,53 @@ export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
             </div>
           </Card>
 
+          {/* Investor Feedback Card */}
+          <Card className="p-6">
+            <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+              <MessageSquare className="w-5 h-5 text-amber-600" />
+              Investor Feedback
+            </h3>
+            <div className="space-y-4">
+              {feedback.slice(0, 2).map((fb) => (
+                <div key={fb.id} className="flex gap-3">
+                  <Avatar className="w-8 h-8">
+                    <AvatarImage src={fb.avatar} alt={fb.name} />
+                    <AvatarFallback>{fb.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <div className="font-medium text-sm">{fb.name}</div>
+                      <div className="flex items-center gap-0.5">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`w-3.5 h-3.5 ${
+                              i < fb.rating
+                                ? 'text-amber-500 fill-amber-500'
+                                : 'text-gray-300'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-600 mt-1 line-clamp-2">{fb.comment}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+             <Button variant="outline" size="sm" className="w-full mt-4">
+              View All Feedback
+            </Button>
+          </Card>
+
+
           {/* Top Contributors */}
           <Card className="p-6">
             <h3 className="font-semibold text-gray-900 mb-4">Top Contributors</h3>
             <div className="space-y-3">
               {contributors.map((contributor, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="relative w-8 h-8 rounded-full overflow-hidden bg-gray-100 flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-100 flex-shrink-0 relative">
                     <Image
                       src={contributor.avatar}
                       alt={contributor.name}
