@@ -43,6 +43,7 @@ interface FarmerDashboardProps {
 export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [newUpdate, setNewUpdate] = useState('');
+  const [feedbackRating, setFeedbackRating] = useState(0);
   
   const fundingProgress = (farmerData.currentFunding / farmerData.totalFunding) * 100;
   const remainingAmount = farmerData.totalFunding - farmerData.currentFunding;
@@ -304,7 +305,7 @@ export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
               <MessageSquare className="w-5 h-5 text-amber-600" />
               Investor Feedback
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-4 mb-6">
               {feedback.slice(0, 2).map((fb) => (
                 <div key={fb.id} className="flex gap-3">
                   <Avatar className="w-8 h-8">
@@ -332,9 +333,43 @@ export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
                 </div>
               ))}
             </div>
-             <Button variant="outline" size="sm" className="w-full mt-4">
+            <Button variant="outline" size="sm" className="w-full mt-4">
               View All Feedback
             </Button>
+            
+            <div className="border-t border-gray-100 my-6"></div>
+
+            <h4 className="font-medium text-gray-900 mb-4">Leave Feedback</h4>
+            <div className="space-y-4">
+              <div>
+                <Label className="text-sm">Rating</Label>
+                <div className="flex items-center gap-1 mt-2">
+                  {[...Array(5)].map((_, i) => (
+                    <button key={i} onClick={() => setFeedbackRating(i + 1)}>
+                      <Star
+                        className={`w-6 h-6 transition-colors ${
+                          i < feedbackRating
+                            ? 'text-amber-500 fill-amber-500'
+                            : 'text-gray-300 hover:text-amber-400'
+                        }`}
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <Label htmlFor="feedback-comment" className="text-sm">Comment</Label>
+                <Textarea
+                  id="feedback-comment"
+                  placeholder="Share your experience..."
+                  className="mt-2"
+                  rows={3}
+                />
+              </div>
+              <Button size="sm" className="w-full bg-green-600 hover:bg-green-700 text-white">
+                Submit Feedback
+              </Button>
+            </div>
           </Card>
 
 
