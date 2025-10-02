@@ -166,7 +166,7 @@ export function FarmerProfile({ farmer, onBack, onInvest }: FarmerProfileProps) 
                   src={farmer.cropImage}
                   alt="Current crop status"
                   fill
-                  className="w-full h-48 object-cover"
+                  className="object-cover"
                 />
                 <div className="absolute bottom-3 left-3 right-3">
                   <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
@@ -181,7 +181,7 @@ export function FarmerProfile({ farmer, onBack, onInvest }: FarmerProfileProps) 
                   src="https://images.unsplash.com/photo-1661369604211-357adfcef6bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHx3aGVhdCUyMGNyb3BzJTIwaGFydmVzdCUyMGdvbGRlbnxlbnwxfHx8fDE3NTkzMTU3NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Expected harvest"
                   fill
-                  className="w-full h-48 object-cover"
+                  className="object-cover"
                 />
                 <div className="absolute bottom-3 left-3 right-3">
                   <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
