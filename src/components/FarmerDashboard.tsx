@@ -125,10 +125,43 @@ export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
             className="flex items-center gap-2"
           >
             <Edit className="w-4 h-4" />
-            Edit Profile
+            {isEditing ? 'Cancel' : 'Edit Profile'}
           </Button>
         </div>
       </div>
+      
+      {isEditing && (
+        <Card className="p-6 mb-8">
+          <h2 className="text-lg font-semibold text-gray-900 mb-6">Edit Your Profile</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <Label htmlFor="name">Full Name</Label>
+              <Input id="name" defaultValue={farmerData.name} />
+            </div>
+            <div>
+              <Label htmlFor="location">Location</Label>
+              <Input id="location" defaultValue={farmerData.location} />
+            </div>
+            <div>
+              <Label htmlFor="experience">Years of Experience</Label>
+              <Input id="experience" type="number" defaultValue={farmerData.experience} />
+            </div>
+            <div>
+              <Label htmlFor="farmSize">Farm Size</Label>
+              <Input id="farmSize" defaultValue={farmerData.farmSize} />
+            </div>
+            <div className="md:col-span-2">
+              <Label htmlFor="avatar">Profile Picture URL</Label>
+              <Input id="avatar" defaultValue={farmerData.avatar} />
+            </div>
+          </div>
+          <div className="mt-6 flex justify-end gap-3">
+            <Button variant="outline" onClick={() => setIsEditing(false)}>Cancel</Button>
+            <Button onClick={() => setIsEditing(false)} className="bg-green-600 hover:bg-green-700 text-white">Save Changes</Button>
+          </div>
+        </Card>
+      )}
+
 
       {/* Stats Overview */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -298,7 +331,7 @@ export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
               </Button>
             </div>
           </Card>
-
+          
           {/* Investor Feedback Card */}
           <Card className="p-6">
             <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
