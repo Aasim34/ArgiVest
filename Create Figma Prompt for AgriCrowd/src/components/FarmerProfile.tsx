@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { Button } from './ui/button';
 import { Progress } from './ui/progress';
@@ -15,10 +16,12 @@ import {
   Award,
   Sprout,
   DollarSign,
-  Clock
+  Clock,
+  Star
 } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Farmer } from './FarmerCard';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 interface FarmerProfileProps {
   farmer: Farmer;
@@ -46,6 +49,34 @@ export function FarmerProfile({ farmer, onBack, onInvest }: FarmerProfileProps) 
     { phase: 'Harvest & Sale', status: 'upcoming', date: 'Mar 2025' },
     { phase: 'Returns Distribution', status: 'upcoming', date: 'Apr 2025' }
   ];
+
+  const feedback = [
+    {
+      id: '1',
+      name: 'Priya Sharma',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150',
+      rating: 5,
+      date: '2 weeks ago',
+      comment: 'Rajesh is an incredibly dedicated farmer. The project updates were timely, and the final produce was of excellent quality. Highly recommended!'
+    },
+    {
+      id: '2',
+      name: 'Amit Singh',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150',
+      rating: 4,
+      date: '1 month ago',
+      comment: 'A very transparent and well-managed project. The ROI was as expected. I would have liked more frequent photo updates, but overall a great experience.'
+    },
+     {
+      id: '3',
+      name: 'Sunita Devi',
+      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150',
+      rating: 5,
+      date: '3 months ago',
+      comment: 'Fantastic experience from start to finish. The use of modern technology was impressive, and the final returns exceeded my expectations. Will invest again!'
+    }
+  ];
+
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -185,6 +216,42 @@ export function FarmerProfile({ farmer, onBack, onInvest }: FarmerProfileProps) 
                       </span>
                       <span className="text-sm text-gray-500">{milestone.date}</span>
                     </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
+
+          {/* Investor Feedback */}
+          <Card className="p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-6">Investor Feedback</h2>
+            <div className="space-y-6">
+              {feedback.map((fb) => (
+                <div key={fb.id} className="flex gap-4">
+                  <Avatar>
+                    <AvatarImage src={fb.avatar} alt={fb.name} />
+                    <AvatarFallback>{fb.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="font-medium">{fb.name}</div>
+                        <div className="text-xs text-gray-500">{fb.date}</div>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`w-4 h-4 ${
+                              i < fb.rating
+                                ? 'text-amber-500 fill-amber-500'
+                                : 'text-gray-300'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-gray-600 mt-2">{fb.comment}</p>
                   </div>
                 </div>
               ))}
