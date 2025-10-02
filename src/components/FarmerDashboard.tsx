@@ -159,8 +159,8 @@ export function FarmerDashboard({ farmerData }: FarmerDashboardProps) {
               <Input id="pan-number" placeholder="ABCDE1234F" />
             </div>
             <div className="md:col-span-2">
-              <Label htmlFor="avatar">Profile Picture URL</Label>
-              <Input id="avatar" defaultValue={farmerData.avatar} />
+              <Label htmlFor="avatar">Profile Picture</Label>
+              <Input id="avatar" type="file" />
             </div>
              <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
